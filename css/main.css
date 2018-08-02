@@ -46,3 +46,15 @@ hr {
   height: 40vw;
   width: 100vw;
 }
+
+.near-you {
+  display: flex;
+  justify-content: center;
+  color: #AB987A;
+}
+
+.custom-select {
+  border: solid 2px #AB987A;
+  background-color:  #AB987A;
+}
+
