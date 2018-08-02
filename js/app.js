@@ -1,4 +1,4 @@
 
 $(document).ready(function() {
-  $('.pls').fadeIn('slow')
+  $('.pls').delay('5000').fadeOut('slow')
 });
