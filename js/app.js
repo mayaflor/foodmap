@@ -1,1 +1,4 @@
-// Add your JavaScript
+
+$(document).ready(function() {
+  $('.pls').fadeIn('slow')
+});
