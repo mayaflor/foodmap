@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('.logo-splash').delay('5000').fadeOut('slow');
 
   restaurantes.forEach(restaurante => {
-  $(".images").append($("<img class='images' src=" + restaurante.image + ">"));
+  $(".images").append($("<img class='restaurants-img' src=" + restaurante.image + ">"));
   });
 
 });
