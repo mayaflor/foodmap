@@ -1,6 +1,11 @@
 
 $(document).ready(function() {
-  $('.logo-splash').delay('5000').fadeOut('slow')
+  $('.logo-splash').delay('5000').fadeOut('slow');
+
+  restaurantes.forEach(restaurante => {
+  $(".images").append($("<img class='images' src=" + restaurante.image + ">"));
+  });
+
 });
 
 // Google Maps
@@ -17,7 +22,6 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       infoWindow.open(map);

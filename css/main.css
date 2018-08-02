@@ -6,6 +6,7 @@ Eggshell: #F5F5F5 */
 body {
   background-color: #F5F5F5;
   color: #0F1626;
+  height: 100%;
 }
 
 .logo {
@@ -15,7 +16,7 @@ body {
 .logo-splash {
   background-color: #F5F5F5;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,3 +59,6 @@ hr {
   background-color:  #AB987A;
 }
 
+.images {
+  height: 20vw;
+}
