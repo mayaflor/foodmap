@@ -9,6 +9,10 @@ body {
 }
 
 .logo {
+  color: #FF533D;
+}
+
+.logo-splash {
   background-color: #F5F5F5;
   width: 100vw;
   height: 100vh;
@@ -16,5 +20,29 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #FF533D;
+}
+
+.logo-header {
+  display: flex;
+  justify-content: center;
+}
+
+.line {
+  color: #AB987A;
+  display: flex;
+  flex-direction: row;
+}
+
+hr {
+  border: solid 1px #AB987A;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 90vw;
+}
+
+#map {
+  border-top: solid 2px #FF533D;
+  border-bottom: solid 2px #FF533D;
+  height: 40vw;
+  width: 100vw;
 }
