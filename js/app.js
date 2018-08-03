@@ -6,6 +6,14 @@ $(document).ready(function() {
   $(".images").append($("<img class='restaurants-img' id="+restaurante.type+" src=" + restaurante.image + ">"));
   });
 
+  $("select").filter(function( index ) {
+    if (index == $("img").attr( "id" )) {
+      console.log("ya")
+
+    }
+  });
+
+
 
 });
 
