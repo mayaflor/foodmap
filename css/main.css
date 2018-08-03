@@ -64,4 +64,11 @@ hr {
 
 .restaurants-img {
   height: 20vw;
+  margin-top: 1vw;
+}
+
+.images {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
