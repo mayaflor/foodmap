@@ -6,14 +6,32 @@ $(document).ready(function() {
   $(".images").append($("<img class='restaurants-img' id="+restaurante.type+" src=" + restaurante.image + ">"));
   });
 
-  $("select").filter(function( index ) {
-    if (index == $("img").attr( "id" )) {
-      console.log("ya")
+  // $("select").filter(function( index ) {
+  //   if (index.val() == $("img").attr( "id" )) {
+  //     console.log("ya")
 
-    }
+  //   }
+  // });
+
+  // $("img").each(function( img ) {
+  //   if ($("select").val() ==! $("img").id ) {
+  //     $("img").addClass("not-filter")
+  //   };
+  // });
+
+  // $( "select" ).keyup(function() {
+  //   var value = $( this ).val();
+  //   if (value ==! $("img").attr("id") ) {
+  //     $("img").addClass("not-filter")
+  //   };
+  // });
+
+  $('select[name=selector]').change(function() { 
+    var value = $(this).val()
+    if (value ==! $('div.body img').id ) {
+      $('div.body img').addClass("not-filter")
+    };
   });
-
-
 
 });
 

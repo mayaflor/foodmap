@@ -72,3 +72,7 @@ hr {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.not-filter {
+  display: none;
+}
