@@ -3,37 +3,43 @@ $(document).ready(function() {
   $('.logo-splash').delay('5000').fadeOut('slow');
 
   restaurantes.forEach(restaurante => {
-  $(".images").append($("<img class='restaurants-img' id="+restaurante.type+" src=" + restaurante.image + ">"));
+  $(".images").append($("<img class='restaurants-img "+restaurante.type+"' src=" + restaurante.image + ">"));
   });
 
-  // $("select").filter(function( index ) {
-  //   if (index.val() == $("img").attr( "id" )) {
-  //     console.log("ya")
 
-  //   }
+  $("#filter button").each(function() {
+    $(this).on("click", function(){
+        var filtertag = $(this).attr('id');
+        $('.restaurants-img').show();
+        $('.restaurants-img:not(.' + filtertag + ')').hide();
+    });
+  });
+
+  // function filterRestaurant(index) {
+  //   $('.restaurants-img').each(function () {
+  //     if ( index !== $(this).val() ) {
+  //       $(this).hide();
+  //       // $(this).addClass("not-filter")
+  //     }
+  //     else {
+  //       $(this).show();
+  //     }
+  //   });
+  // };
+
+  // $(".btn").click(function(event) {
+  //   filterRestaurant($(this).val())
   // });
 
-  // $("img").each(function( img ) {
-  //   if ($("select").val() ==! $("img").id ) {
-  //     $("img").addClass("not-filter")
-  //   };
-  // });
-
-  // $( "select" ).keyup(function() {
-  //   var value = $( this ).val();
-  //   if (value ==! $("img").attr("id") ) {
-  //     $("img").addClass("not-filter")
-  //   };
-  // });
 
   // $('select[name=selector]').change(function() { 
   //   var value = $(this).val()
   //   if (value ==! $('div.body img').id ) {
-  //     $(document).ready(function () {
-  //       $('.body').each(function () {
-  //           $('img').addClass("not-filter")
+  //     $('img').addClass("not-filter")
   //   };
   // });
+
+
 
 });
 
