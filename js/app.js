@@ -9,35 +9,14 @@ $(document).ready(function() {
 
   $("#filter button").each(function() {
     $(this).on("click", function(){
-        var filtertag = $(this).attr('id');
+        var filterTag = $(this).attr('id');
+        if (filterTag === 'todos' ) {
+          $('.restaurants-img').show();
+        } else {
         $('.restaurants-img').show();
-        $('.restaurants-img:not(.' + filtertag + ')').hide();
+        $('.restaurants-img:not(.' + filterTag + ')').hide(); }
     });
   });
-
-  // function filterRestaurant(index) {
-  //   $('.restaurants-img').each(function () {
-  //     if ( index !== $(this).val() ) {
-  //       $(this).hide();
-  //       // $(this).addClass("not-filter")
-  //     }
-  //     else {
-  //       $(this).show();
-  //     }
-  //   });
-  // };
-
-  // $(".btn").click(function(event) {
-  //   filterRestaurant($(this).val())
-  // });
-
-
-  // $('select[name=selector]').change(function() { 
-  //   var value = $(this).val()
-  //   if (value ==! $('div.body img').id ) {
-  //     $('img').addClass("not-filter")
-  //   };
-  // });
 
 
 
