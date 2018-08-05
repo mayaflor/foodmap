@@ -26,12 +26,14 @@ $(document).ready(function() {
   //   };
   // });
 
-  $('select[name=selector]').change(function() { 
-    var value = $(this).val()
-    if (value ==! $('div.body img').id ) {
-      $('div.body img').addClass("not-filter")
-    };
-  });
+  // $('select[name=selector]').change(function() { 
+  //   var value = $(this).val()
+  //   if (value ==! $('div.body img').id ) {
+  //     $(document).ready(function () {
+  //       $('.body').each(function () {
+  //           $('img').addClass("not-filter")
+  //   };
+  // });
 
 });
 
