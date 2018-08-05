@@ -8,6 +8,8 @@ $(document).ready(function() {
     $(".modal").attr('id',"food-"+ $(this).attr('id'));
     $(".modal").attr('aria-labelledby', "food-"+ $(this).attr('id'));
     $(".modal-title").text(restaurante.name);
+    $(".modal-type").text(restaurante.type);
+    $(".modal-text").text(restaurante.description);
     });
   });
 
