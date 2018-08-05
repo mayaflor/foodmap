@@ -2,10 +2,14 @@
 $(document).ready(function() {
   $('.logo-splash').delay('5000').fadeOut('slow');
 
-  restaurantes.forEach(restaurante => {
-  $(".images").append($("<img class='restaurants-img "+restaurante.type+"' src=" + restaurante.image + ">"));
+  restaurantes.forEach((restaurante, index) => {
+  $(".images").append($("<img id='"+ index +"' class='restaurants-img "+ restaurante.type +"' data-toggle='modal' data-target='#food-"+ index +"' src=" + restaurante.image + ">"));
+  $('#' + index).click(function () {
+    $(".modal").attr('id',"food-"+ $(this).attr('id'));
+    $(".modal").attr('aria-labelledby', "food-"+ $(this).attr('id'));
+    $(".modal-title").text(restaurante.name);
+    });
   });
-
 
   $("#filter button").each(function() {
     $(this).on("click", function(){
@@ -17,8 +21,6 @@ $(document).ready(function() {
         $('.restaurants-img:not(.' + filterTag + ')').hide(); }
     });
   });
-
-
 
 });
 
