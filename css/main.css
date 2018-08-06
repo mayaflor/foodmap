@@ -51,6 +51,13 @@ hr {
   width: 100vw;
 }
 
+#map2 {
+  border-top: solid 2px #FF533D;
+  border-bottom: solid 2px #FF533D;
+  height: 80vw;
+  width: 90vw;
+}
+
 .near-you {
   display: flex;
   justify-content: center;
@@ -66,4 +73,8 @@ hr {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.modal-map {
+  height: 20vw;
 }

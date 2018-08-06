@@ -2,6 +2,17 @@
 $(document).ready(function() {
   $('.logo-splash').delay('5000').fadeOut('slow');
 
+  // MAP1
+  var map = L.map('map').setView([-23.5576364, -46.6644888], 16);
+
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  L.marker([-23.5576364, -46.6644888]).addTo(map)
+    .bindPopup("Você está aqui!")
+    .openPopup();
+
   restaurantes.forEach((restaurante, index) => {
   $(".images").append($("<img id='"+ index +"' class='restaurants-img "+ restaurante.type +"' data-toggle='modal' data-target='#food-"+ index +"' src=" + restaurante.image + ">"));
   $('#' + index).click(function () {
@@ -10,6 +21,24 @@ $(document).ready(function() {
     $(".modal-title").text(restaurante.name);
     $(".modal-type").text(restaurante.type);
     $(".modal-text").text(restaurante.description);
+
+    // MAP2
+    var latLng = [restaurante.latitude,restaurante.longitude]
+    var map2 = L.map('map2').setView(latLng, 18);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map2);
+
+    L.marker(latLng).addTo(map2)
+    .bindPopup("O restaurante fica aqui!")
+    .openPopup();
+
+    $('.restaurants-img').on('show.bs.modal', function(){
+      setTimeout(function() {
+        map.invalidateSize();
+      }, 10);
+    });
     });
   });
 
@@ -23,39 +52,4 @@ $(document).ready(function() {
         $('.restaurants-img:not(.' + filterTag + ')').hide(); }
     });
   });
-
 });
-
-// Google Maps
-var map, infoWindow;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -23.5576413, lng: -46.6623001},
-    zoom: 15
-  });
-  infoWindow = new google.maps.InfoWindow;
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(map);
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-}
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
-}
-
