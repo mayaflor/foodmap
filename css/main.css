@@ -23,7 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo-header {
@@ -49,13 +49,15 @@ hr {
   border-bottom: solid 2px #FF533D;
   height: 40vw;
   width: 100vw;
+  z-index: 10;
 }
 
 #map2 {
   border-top: solid 2px #FF533D;
   border-bottom: solid 2px #FF533D;
-  height: 80vw;
-  width: 90vw;
+  height: 100px;
+  width: 300px;
+  z-index: 10;
 }
 
 .near-you {

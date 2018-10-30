@@ -2,6 +2,7 @@
 $(document).ready(function() {
   $('.logo-splash').delay('5000').fadeOut('slow');
 
+
   // MAP1
   var map = L.map('map').setView([-23.5576364, -46.6644888], 16);
 
